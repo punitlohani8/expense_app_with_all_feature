@@ -15,6 +15,16 @@ class AppColor {
 
 }
 
+// class Dimensions{
+//   BuildContext context;
+//   Dimensions({required this.context});
+//
+//
+//   static double size= MediaQuery.of().size.height;
+//
+// }
+
+
 TextStyle mTextStyle({
   required double fontSize,
   Color mColor = AppColor.textColor,
@@ -41,7 +51,8 @@ InputDecoration fieldDecoration({
     fillColor: filledColor,
     hintText: hint,
     label: Text(label),
-    border: outlineBorder(borderColor: Colors.white,borderWidth: 2)
+    enabledBorder: outlineBorder(),
+    focusedBorder: outlineBorder(borderColor: AppColor.appBlackColor,borderWidth: 2)
   );
 }
 
@@ -57,4 +68,15 @@ OutlineInputBorder outlineBorder({
       width: borderWidth,
     )
   );
+}
+
+Widget widthSpacer({
+  double width=10.0,
+}){
+  return SizedBox(width: width,);
+}
+Widget heightSpacer({
+  double height=10.0,
+}){
+  return SizedBox(height: height,);
 }
