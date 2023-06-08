@@ -1,6 +1,5 @@
+import '../data_provider/db_helper.dart';
 
-
-import '../helper/db_helper.dart';
 
 class ExpenseModel {
   String? eTitle;

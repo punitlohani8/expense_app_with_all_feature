@@ -1,20 +1,21 @@
-import '../helper/db_helper.dart';
+import '../data_provider/db_helper.dart';
+
 
 class UserModel {
   String? email;
-  String? img;
+  String? name;
   String? pass;
   String? mobile;
   int? userId;
 
 
-  UserModel({this.userId,this.email,this.img,this.pass,this.mobile});
+  UserModel({this.userId,this.email,this.name,this.pass,this.mobile});
 
   factory UserModel.fromMap(Map<String,dynamic> map) {
     return UserModel(
         userId: map[DbHelper.USERID],
         mobile: map[DbHelper.USERMOBILE],
-        img: map[DbHelper.USERIMAGE],
+        name: map[DbHelper.USERNAME],
         pass: map[DbHelper.USERPASS],
         email: map[DbHelper.USEREMAIL]
 
@@ -26,7 +27,7 @@ class UserModel {
       DbHelper.USERID: userId,
       DbHelper.USEREMAIL: email,
       DbHelper.USERPASS : pass,
-      DbHelper.USERIMAGE :img,
+      DbHelper.USERNAME :name,
       DbHelper.USERMOBILE : mobile
     };
   }

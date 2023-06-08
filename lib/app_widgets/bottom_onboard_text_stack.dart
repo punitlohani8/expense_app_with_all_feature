@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../ui_helper.dart';
+import '../helper/ui_helper.dart';
 
 class BottomOnboardTextStack extends StatelessWidget {
   VoidCallback onPress;

@@ -1,6 +1,4 @@
-
-
-import '../helper/db_helper.dart';
+import '../data_provider/db_helper.dart';
 
 class CatModel {
   String? catTitle;
