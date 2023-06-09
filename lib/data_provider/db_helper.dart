@@ -52,16 +52,16 @@ class DbHelper{
             '$EXPENSEAMOUNT text,'
             '$EXPENSEBALANCE text,'
             '$EXPENSETYPE text,'
-            '$EXPENSEDATE date,'
+            '$EXPENSEDATE text,'
             '$USERID integer,'
-            '$CATEGORYID integer,)'
+            '$CATEGORYID integer)'
       );
       db.execute(
           'create table $USERTABLENAME ($USERID integer primary key autoincrement,'
               '$USERNAME text,'
               '$USEREMAIL text,'
               '$USERPASS text,'
-              '$USERMOBILE text,)'
+              '$USERMOBILE text)'
       );
       db.execute(
           'create table $CATEGORYTABLENAME ($CATEGORYID integer primary key autoincrement,'
@@ -73,14 +73,15 @@ class DbHelper{
         db.insert(CATEGORYTABLENAME, CatModel(
           catTitle:img.keys.toList()[i],
           img : img.values.toList()[i],
-        ) as Map<String, Object?>);
-
+        ).toMap());
       }
+
+
     });
 
   }
 
-  // ADDing Expense
+  //ADDing Expense
   Future<bool> addExpense(ExpenseModel expense) async {
     var db = await openDB();
     var check = await db.insert(EXPENSETABLENAME, expense.toMap());
@@ -122,7 +123,7 @@ class DbHelper{
     mDb.delete(EXPENSETABLENAME, where: '$EXPENSEID = ?', whereArgs: [id]);
   }
 
-  //Sign In
+  // //Sign In
   Future<bool> SignIn(String email, String pass) async {
     var db = await openDB();
     List<Map<String, dynamic>> data = await db.query(USERTABLENAME,

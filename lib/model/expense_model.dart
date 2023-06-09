@@ -4,8 +4,8 @@ import '../data_provider/db_helper.dart';
 class ExpenseModel {
   String? eTitle;
   String? eDesc;
-  String? eAmt;
-  String? eBal;
+  int? eAmt;
+  int? eBal;
   String? eType;
   String? eDate;
   int? expenseId;
