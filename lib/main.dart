@@ -20,7 +20,7 @@ void main() {
       ],
       child:MultiBlocProvider(
         providers: [
-          // BlocProvider(create: (_) => ExpenseBloc(repo: expenseRepo)),
+          BlocProvider(create: (_) => ExpenseBloc(repo: expenseRepo)),
           BlocProvider(create: (_) => CatBloc(repo: expenseRepo))
         ],
         child: const MyApp(),

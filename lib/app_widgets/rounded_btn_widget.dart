@@ -9,6 +9,7 @@ class RoundedBtn extends StatelessWidget {
   VoidCallback onPress;
   IconData? icon;
   double radius;
+  bool isLoading;
 
   RoundedBtn({
     super.key,
@@ -18,6 +19,7 @@ class RoundedBtn extends StatelessWidget {
     this.width = double.infinity,
     this.color = AppColor.appBlackColor,
     this.icon,
+    this.isLoading=false,
     this.radius=21
   });
 
@@ -27,7 +29,7 @@ class RoundedBtn extends StatelessWidget {
         width: width,
         height: height,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPress,
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radius),
